@@ -98,6 +98,8 @@ Bangle.on("swipe", (lr, ud) => {
   addAmount(lr * swipeIncrement);
 });
 
+Bangle.setUI({mode:"custom",back:() => Bangle.showClock()});
+
 Bangle.loadWidgets();
 Bangle.drawWidgets();
 
