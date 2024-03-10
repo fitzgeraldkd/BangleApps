@@ -42,6 +42,13 @@ function addAmount(amount) {
   updateProgress();
 }
 
+function getTimeString(date, hour) {
+  if (typeof hour !== "undefined") {
+    date = new Date(date.getFullYear(), date.getMonth(), date.getDate(), hour);
+  }
+  return require("locale").time(date, 1);
+}
+
 function updateProgress() {
   const date = new Date();
 
@@ -55,13 +62,13 @@ function updateProgress() {
   g.drawRect(PBOX.x1, PBOX.y1, PBOX.x2, PBOX.y2);
 
   g.setFont("6x15").setFontAlign(0, 1);
-  g.drawString(require("locale").time(date, 1) + require("locale").meridian(date), 88, PBOX.y1 - 2);
+  g.drawString(getTimeString(date), 88, PBOX.y1 - 2);
 
   g.setFont("6x8").setFontAlign(-1, 1);
-  g.drawString(startHour, PBOX.x1, PBOX.y1 - 2);
+  g.drawString(getTimeString(date, startHour), PBOX.x1, PBOX.y1 - 2);
 
   g.setFontAlign(1, 1);
-  g.drawString(endHour, PBOX.x2, PBOX.y1 - 2);
+  g.drawString(getTimeString(date, endHour), PBOX.x2, PBOX.y1 - 2);
 
   if (timeProgress > 0 && timeProgress < 1) {
     g.setColor(timeProgress < waterProgress ? -1 : g.theme.fg);
