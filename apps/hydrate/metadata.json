@@ -1,0 +1,30 @@
+{
+  "id": "hydrate",
+  "name": "Hydrate",
+  "shortname": "Hydrate",
+  "version": "0.01",
+  "description": "An app to track your daily water intake.",
+  "icon": "app.png",
+  "tags": "health",
+  "type": "app",
+  "supports": [
+    "BANGLEJS2"
+  ],
+  "readme": "README.md",
+  "storage": [
+    {
+      "name": "hydrate.app.js",
+      "url": "app.js"
+    },
+    {
+      "name": "hydrate.img",
+      "url": "app-icon.js",
+      "evaluate": true
+    }
+  ],
+  "data": [
+    {
+      "name": "hydrate.json"
+    }
+  ]
+}
