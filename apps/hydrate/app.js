@@ -82,8 +82,8 @@ function draw() {
   g.drawLine(88, 119, 88, 176);
 
   g.setFont("12x20").setFontAlign(0, 0);
-  g.drawString("-" + increment, 44, 148);
-  g.drawString("+" + increment, 132, 148);
+  g.drawString("-" + increment, 42, 148);
+  g.drawString("+" + increment, 134, 148);
 
   updateProgress();
 }
