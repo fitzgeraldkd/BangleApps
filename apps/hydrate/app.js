@@ -106,8 +106,9 @@ Bangle.on("swipe", (lr, ud) => {
 });
 
 Bangle.loadWidgets();
-Bangle.drawWidgets();
-
+// Bangle.drawWidgets();
 Bangle.setUI({mode:"custom",back:() => Bangle.showClock()});
 
 draw();
+
+setTimeout(Bangle.drawWidgets, 0);
